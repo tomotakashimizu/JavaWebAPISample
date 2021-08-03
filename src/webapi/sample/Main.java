@@ -1,4 +1,4 @@
-package java.webapi.sample;
+package webapi.sample;
 
 public class Main {
 
