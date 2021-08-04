@@ -18,8 +18,8 @@ public class Main {
 		String jsonData = "empty";
 		URL url;
 		try {
-			String url_s = "https://pn-c9759a75.herokuapp.com/" + param;
-			url = new URL(url_s);
+			String stringUrl = "https://pn-c9759a75.herokuapp.com/" + param;
+			url = new URL(stringUrl);
 			URLConnection urlConnection;
 			urlConnection = url.openConnection();
 			InputStream inputStream = urlConnection.getInputStream();
