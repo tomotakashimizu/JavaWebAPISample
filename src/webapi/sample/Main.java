@@ -10,32 +10,28 @@ public class Main {
 
 	public static void main(String[] args) {
 		String param = "us/newyork/newyork";
-		String retJson = pn_c9759a75_herokuapp_com(param);
-		p(retJson);
+		String jsonData = getJsonData(param);
+		System.out.println(jsonData);
 	}
-	
-	public static void p(String a){
-        System.out.println(a);
-    }
  
-	public static String pn_c9759a75_herokuapp_com(String param) {
-		String retJson = "empty";
+	public static String getJsonData(String param) {
+		String jsonData = "empty";
 		URL url;
 		try {
 			String url_s = "https://pn-c9759a75.herokuapp.com/" + param;
 			url = new URL(url_s);
-			URLConnection conn;
-			conn = url.openConnection();
-			InputStream in = conn.getInputStream();
-			BufferedReader br = new BufferedReader(new InputStreamReader(in));
-			String line;
-			if ((line = br.readLine()) != null) {
-				retJson = line;
+			URLConnection urlConnection;
+			urlConnection = url.openConnection();
+			InputStream inputStream = urlConnection.getInputStream();
+			BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+			String line = bufferedReader.readLine();
+			if (line != null) {
+				jsonData = line;
 			}
-			br.close();
+			bufferedReader.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return retJson;
+		return jsonData;
 	}
 }
