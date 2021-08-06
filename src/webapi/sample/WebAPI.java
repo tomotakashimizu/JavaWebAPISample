@@ -44,7 +44,6 @@ public class WebAPI {
 			}
 			bufferedReader.close();
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return jsonData;
